@@ -1,6 +1,5 @@
 use std::borrow::Cow;
 
-use base64;
 use rand::distributions::{Distribution, Uniform};
 use rand::{rngs::OsRng, Rng};
 use ring::digest::SHA256_OUTPUT_LEN;

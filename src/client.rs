@@ -1,7 +1,6 @@
 use std::borrow::Cow;
 use std::num::NonZeroU32;
 
-use base64;
 use rand::distributions::{Distribution, Uniform};
 use rand::{rngs::OsRng, Rng};
 use ring::digest::SHA256_OUTPUT_LEN;
@@ -182,7 +181,7 @@ impl<'a> ServerFirst<'a> {
         let (client_proof, server_signature): ([u8; SHA256_OUTPUT_LEN], hmac::Tag) = find_proofs(
             &self.gs2header,
             &self.client_first_bare,
-            &server_first,
+            server_first,
             &salted_password,
             nonce,
         );
@@ -190,7 +189,7 @@ impl<'a> ServerFirst<'a> {
             "c={},r={},p={}",
             base64::encode(self.gs2header.as_bytes()),
             nonce,
-            base64::encode(&client_proof)
+            base64::encode(client_proof)
         );
         Ok(ClientFinal {
             server_signature,

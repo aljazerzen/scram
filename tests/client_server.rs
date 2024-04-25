@@ -18,8 +18,8 @@ impl TestProvider {
         let adm_iterations = NonZeroU32::new(8192).unwrap();
         let admin_password = hash_password("admin_password", adm_iterations, b"messy");
         TestProvider {
-            user_password: user_password,
-            admin_password: admin_password,
+            user_password,
+            admin_password,
         }
     }
 }
