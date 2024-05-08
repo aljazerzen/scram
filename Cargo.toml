@@ -10,7 +10,7 @@ repository = "https://github.com/tomprogrammer/scram"
 version = "0.6.0"
 
 [dependencies]
-base64 = "0.21.7"
+base64 = "0.22"
 rand = "0.8.5"
 ring = "0.17.7"
 
