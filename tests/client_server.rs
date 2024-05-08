@@ -1,9 +1,9 @@
 extern crate rand;
 extern crate ring;
-extern crate scram;
+extern crate scram_2;
 
 use ring::digest::SHA256_OUTPUT_LEN;
-use scram::*;
+use scram_2::*;
 use std::num::NonZeroU32;
 
 struct TestProvider {
